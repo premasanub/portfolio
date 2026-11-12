@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prema K — Full Stack Developer portfolio" />
+  <title>Prema K | Full Stack Developer</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --panel2: #172239;
+      --text: #f4f7fb;
+      --muted: #a8b4c8;
+      --accent: #8b5cf6;
+      --accent2: #22d3ee;
+      --line: rgba(255,255,255,.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      background: radial-gradient(ellipse at 10% 0%, rgba(139,92,246,.16), transparent 35%), var(--bg);
+      color: var(--text); line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(11,16,32,.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .brand { font-weight: 800; letter-spacing: .4px; font-size: 1.1rem; }
+    .brand span { color: var(--accent2); }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover { color: var(--accent2); }
+    .hero { padding: 92px 0 76px; display: grid; grid-template-columns: 1.35fr .65fr; gap: 48px; align-items: center; }
+    .eyebrow { color: var(--accent2); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.7rem); line-height: 1.08; letter-spacing: -2px; margin: 14px 0 18px; }
+    h1 .gradient { background: linear-gradient(90deg, var(--accent2), #b79aff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: var(--muted); font-size: 1.08rem; max-width: 650px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; padding: 11px 18px; border-radius: 12px; font-weight: 700; border: 1px solid var(--line); transition: transform .2s, opacity .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .primary { color: #08111d; border: 0; background: linear-gradient(90deg, var(--accent2), #a78bfa); }
+    .hero-card { background: linear-gradient(145deg, var(--panel2), var(--panel)); border: 1px solid var(--line); padding: 26px; border-radius: 24px; box-shadow: 0 20px 70px rgba(0,0,0,.25); }
+    .monogram { width: 100px; height: 100px; border-radius: 25px; display: grid; place-items: center; margin-bottom: 20px; font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; }
+    .hero-card h3 { margin: 0 0 4px; font-size: 1.2rem; }
+    .hero-card p { margin: 0; font-size: .92rem; }
+    .mini-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag { color: #dbeafe; background: rgba(139,92,246,.14); border: 1px solid rgba(167,139,250,.25); padding: 5px 10px; border-radius: 999px; font-size: .78rem; }
+    section { padding: 62px 0; }
+    .section-head { margin-bottom: 28px; }
+    .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: -1px; margin: 4px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .card ul { padding-left: 18px; color: var(--muted); margin-bottom: 0; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { padding: 9px 13px; background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; font-weight: 600; font-size: .9rem; }
+    .timeline { border-left: 2px solid rgba(34,211,238,.35); padding-left: 22px; }
+    .timeline .card { position: relative; }
+    .timeline .card::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent2); position: absolute; left: -29px; top: 28px; }
+    .contact-card { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; background: linear-gradient(130deg, rgba(139,92,246,.18), rgba(34,211,238,.10)); }
+    .contact-card p { overflow-wrap: anywhere; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .85rem; text-align: center; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 64px 0 48px; gap: 28px; }
+      .grid { grid-template-columns: 1fr; }
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 10px; }
+      .navlinks { gap: 14px; }
+      section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">PREMA<span>.</span>K</a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container hero" id="home">
+      <div>
+        <div class="eyebrow">Full Stack Developer · Fresher</div>
+        <h1>Hi, I'm Prema K.<br /><span class="gradient">I build web apps.</span></h1>
+        <p>Entry-level Full Stack Developer with MERN stack knowledge and hands-on project experience creating responsive web applications, REST API integrations, and practical user workflows.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore Projects</a>
+          <a class="btn" href="mailto:premakumaran15@gmail.com">Contact Me</a>
+          <a class="btn" href="https://github.com/premasanub" target="_blank" rel="noopener">GitHub Profile ↗</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="monogram">PK</div>
+        <h3>Prema K</h3>
+        <p>Chennai, Tamil Nadu</p>
+        <div class="mini-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span></div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">About</div><h2>A little about me</h2></div>
+        <div class="card">
+          <p>I'm a fresher aspiring to start my career as a Full Stack Developer. I have a B.E. in Computer Science and Engineering and completed MERN Stack certification. I enjoy developing clean, user-friendly interfaces and connecting them with backend APIs. My project work includes a Fitness Class Booking Application and an Invoice Builder.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Toolkit</div><h2>Technical Skills</h2><p>Technologies used across my project work.</p></div>
+        <div class="skills">
+          <span class="skill">React.js</span><span class="skill">JavaScript</span><span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">Tailwind CSS</span><span class="skill">Node.js</span><span class="skill">Express.js</span><span class="skill">MongoDB</span><span class="skill">Mongoose</span><span class="skill">REST APIs</span><span class="skill">Axios</span><span class="skill">Git & GitHub</span><span class="skill">Postman</span><span class="skill">Vite</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Selected Work</div><h2>Projects</h2><p>Practical applications developed as part of my learning and project experience.</p></div>
+        <div class="grid">
+          <article class="card">
+            <h3>Fitness Class Booking Application</h3>
+            <p>A MERN stack application for discovering and booking fitness classes, with separate user and trainer workflows.</p>
+            <ul>
+              <li>Implemented class browsing, booking, schedules, and profile features.</li>
+              <li>Integrated REST APIs for authentication, classes, bookings, and trainer schedules.</li>
+              <li>Worked with JWT authentication, React, Tailwind CSS, Express, MongoDB, and Axios.</li>
+            </ul>
+            <div class="mini-tags"><span class="tag">React</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">Tailwind</span></div>
+          </article>
+          <article class="card">
+            <h3>Invoice Builder</h3>
+            <p>A React application to manage invoice records and generate a convenient invoice preview.</p>
+            <ul>
+              <li>Created and managed invoices with edit and delete functionality.</li>
+              <li>Added invoice line items, total calculations, and status handling.</li>
+              <li>Implemented preview and PDF export features with a responsive UI.</li>
+            </ul>
+            <div class="mini-tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Tailwind CSS</span><span class="tag">PDF Export</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Education</div><h2>Education & Certification</h2></div>
+        <div class="timeline">
+          <article class="card">
+            <h3>B.E. — Computer Science and Engineering</h3>
+            <p>Sams College of Engineering and Technology · 2015</p>
+            <p style="margin-top:8px">Academic score: 65%</p>
+          </article>
+          <article class="card" style="margin-top:18px">
+            <h3>MERN Stack Certification</h3>
+            <p>Certification in MERN stack development.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Let's Connect</div><h2>Contact</h2></div>
+        <div class="card contact-card">
+          <div>
+            <h3>Interested in opportunities</h3>
+            <p>I'm looking for an entry-level Full Stack Developer opportunity.</p>
+            <p><strong>Email:</strong> <a href="mailto:premakumaran15@gmail.com">premakumaran15@gmail.com</a><br />
+               <strong>Phone:</strong> <a href="tel:9360967025">9360967025</a></p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="mailto:premakumaran15@gmail.com">Email Me</a>
+            <a class="btn" href="https://github.com/premasanub" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn" href="https://www.linkedin.com/notifications/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© 2026 Prema K · Full Stack Developer Portfolio</div></footer>
+</body>
+</html>
